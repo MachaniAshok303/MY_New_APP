@@ -1,6 +1,6 @@
-# The Modern Serverless PowerStack, Agentic AI & Paradigm Evolution Guide
+# The Master PowerStack, Agentic AI, Paradigm Shifts & Mental Models Guide
 
-A comprehensive architectural blueprint and reference manual combining the **Modern Serverless Cloud Stack**, the **4 Pillars of Agentic AI Engineering**, and the **Historical Paradigm Shift from Websites to Mobile Apps to Agent Plugins**.
+A comprehensive architectural blueprint and reference manual combining the **Modern Serverless Cloud Stack**, the **4 Pillars of Agentic AI Engineering**, the **Historical Paradigm Shift from Websites to Mobile Apps to Agent Plugins**, **DeepSeek Harness & Agent Runtimes**, **Floci Local Cloud Simulation**, and the **12 Foundational Books Canon**.
 
 ---
 
@@ -496,3 +496,69 @@ $$\mathbf{Agent} = \mathbf{Model} + \mathbf{Harness}$$
    * Can invoke and supervise external agent CLIs (like Claude Code or Codex) as nested sub-agents within a unified run.
 4. **Cache-Aware Performance Tracking**:
    * Optimized for KV-cache prefix reuse, reporting live cache-hit rates, tokens/second, and real-time execution costs.
+
+---
+---
+
+# PART V: FLOCI — THE LOCAL CLOUD FOR AI AGENTS
+
+## 21. What is Floci?
+**Floci** ([floci.io](https://floci.io)) is an open-source, MIT-licensed **local cloud emulator** designed as a high-performance, free-forever alternative to LocalStack.
+
+* **Ultra-Fast & Lightweight**: Built with Quarkus Native and GraalVM, requiring only **~13 MiB RAM** and boasting a **~24ms cold-start time** (compared to LocalStack's ~1GB footprint and multi-second startup).
+* **Multi-Cloud Emulation**:
+  * **AWS (`floci`)**: Port `4566` (S3, DynamoDB, Lambda, SQS, SNS, RDS)
+  * **Azure (`floci-az`)**: Port `4577` (Blob, Queues, Functions, Key Vault)
+  * **GCP (`floci-gcp`)**: Port `4588` (Cloud Storage, Pub/Sub, Firestore)
+  * **Oracle (`floci-oci`)**: Port `4599` (Object Storage, Compute)
+* **The AI Agent Advantage**: Enables autonomous coding agents (Antigravity, Claude Code, Cursor, Aider) to safely spin up, test, and tear down cloud infrastructure locally with **zero cloud credentials, zero API leaks, and zero AWS bills**.
+
+```bash
+# Spin up local AWS emulator in Docker:
+docker run -p 4566:4566 floci/floci
+
+# Interact using standard AWS CLI:
+aws --endpoint-url=http://localhost:4566 s3 mb s3://my-test-bucket
+```
+
+---
+---
+
+# PART VI: THE 12 FOUNDATIONAL BOOKS & MENTAL MODELS CANON
+
+## 22. The 12-Book Master Curriculum
+
+| # | Book Title | Author(s) | Core Domain | One-Line Takeaway |
+| :-: | :--- | :--- | :--- | :--- |
+| **1** | **The Almanack of Naval Ravikant** | Eric Jorgenson & Naval Ravikant | Wealth & Leverage | Build permissionless leverage (code & media) that compounds while you sleep. |
+| **2** | **Zero to One** | Peter Thiel & Blake Masters | Startup Strategy | Monopolies drive progress ($0 \rightarrow 1$); avoid destructive competition. |
+| **3** | **Thinking, Fast and Slow** | Daniel Kahneman | Cognitive Science | Audit fast System 1 emotional biases using slow System 2 deliberation. |
+| **4** | **Steal Like an Artist** | Austin Kleon | Creative Synthesis | Nothing is original; curate your influences and remix the greats. |
+| **5** | **Psycho-Cybernetics** | Dr. Maxwell Maltz | Subconscious Identity | You cannot outperform your self-image; treat failures as autopilot feedback. |
+| **6** | **Algorithms to Live By** | Brian Christian & Tom Griffiths | Decision Theory | Apply computer science (37% rule, caching, explore/exploit) to human decisions. |
+| **7** | **Conspiracy of the Rich** | Robert Kiyosaki | Macro-Finance & Debt | Cash is currency, not money; acquire assets using good debt and capital velocity. |
+| **8** | **Principles: Life and Work** | Ray Dalio | Systems & Truth | $\text{Pain} + \text{Reflection} = \text{Progress}$; make believability-weighted decisions. |
+| **9** | **Atomic Habits** | James Clear | Behavioral Compounding | Small 1% systems compound into massive identity-level transformations. |
+| **10** | **Influence: The Psychology of Persuasion** | Dr. Robert Cialdini | Human Psychology | Master the 6 triggers of human compliance: reciprocity, scarcity, social proof. |
+| **11** | **Deep Work** | Cal Newport | Cognitive Focus | The ability to concentrate without distraction is the superpower of the modern age. |
+| **12** | **Thinking in Systems: A Primer** | Donella Meadows | Systems Architecture | Look past surface events to see feedback loops, stocks, and systemic leverage points. |
+
+---
+
+## 23. The 4-Pillar Human & Builder Architecture
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                  THE COMPLETE 12-BOOK BUILDER CANON                              │
+└────────────────────────────────────────────────┬─────────────────────────────────────────────────┘
+                                                 │
+     ┌───────────────────────┬───────────────────┴───────────────────┬────────────────────────┐
+     ▼                       ▼                                       ▼                        ▼
+[ 1. WEALTH & CAPITAL ] [ 2. STRATEGY & REALITY ]         [ 3. DECISION & SYSTEMS ] [ 4. MIND & IDENTITY ]
+• Naval Ravikant        • Peter Thiel (Zero to One)       • Kahneman (Fast & Slow)  • Maxwell Maltz (Cybernetics)
+• Robert Kiyosaki       • Ray Dalio (Principles)          • Christian & Griffiths   • Austin Kleon (Steal)
+                        • Robert Cialdini (Influence)       (Algorithms)            • James Clear (Atomic Habits)
+                                                          • Donella Meadows         • Cal Newport (Deep Work)
+                                                            (Thinking in Systems)
+```
+
